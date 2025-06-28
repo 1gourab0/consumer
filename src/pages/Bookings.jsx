@@ -1,4 +1,5 @@
 // pages/Bookings.jsx
+import { useNavigate } from '@solidjs/router';
 import { createEffect, createSignal } from 'solid-js';
 
 // Sample bookings data with new structure
@@ -106,6 +107,8 @@ import { createEffect, createSignal } from 'solid-js';
 export default function Bookings() {
   const [activeTab, setActiveTab] = createSignal("requested");
   const [bookingsData, setBookingsData] = createSignal([]);
+
+  const navigate = useNavigate();
 
   const url = import.meta.env.VITE_MS_3
 
@@ -244,7 +247,7 @@ export default function Bookings() {
                       <div class="flex space-x-2">
                         {booking.status === "accepted" && (
                           <>
-                            <button class="text-xs bg-indigo-600 text-white px-3 py-1 rounded">
+                            <button class="text-xs bg-indigo-600 text-white px-3 py-1 rounded" onClick={() => navigate(`/bookings/order_summary?id=${booking.bookingId}`)} >
                               Pay Now
                             </button>
                             <button class="text-xs border border-gray-300 px-3 py-1 rounded">

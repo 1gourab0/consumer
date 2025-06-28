@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Bookings from "./pages/Bookings";
 import Account from "./pages/Accounts";
 import MenuDetails from "./pages/ViewMenu";
+import OrderSummary from "./pages/OrderSummary";
 
 const routes = [
   {
@@ -26,6 +27,7 @@ const routes = [
       { path: '/cart', component: Cart },
       { path: '/checkout', component: Checkout },
       { path: '/bookings', component: Bookings },
+      { path: '/bookings/order_summary', component: OrderSummary},
       { path: '/account', component: Account },
     ]
   }
